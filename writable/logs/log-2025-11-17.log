@@ -1,0 +1,57 @@
+CRITICAL - 2025-11-17 04:02:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "kelas.php"
+[Method: GET, Route: class]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(34): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->kelas()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-17 14:16:14 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: login]
+in SYSTEMPATH/View/View.php on line 430.
+ 1 VENDORPATH/myth/auth/src/Views/login.php(97): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/myth/auth/src/Views/login.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 VENDORPATH/myth/auth/src/Controllers/AuthController.php(413): view()
+ 6 VENDORPATH/myth/auth/src/Controllers/AuthController.php(58): Myth\Auth\Controllers\AuthController->_render()
+ 7 SYSTEMPATH/CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-17 15:52:10 --> TypeError: date(): Argument #2 ($timestamp) must be of type ?int, CodeIgniter\I18n\Time given
+[Method: GET, Route: dashboard]
+in APPPATH/Views/dashboard.php on line 63.
+ 1 APPPATH/Views/dashboard.php(63): date()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/app/Views/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Home.php(27): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->dashboard()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-17 15:58:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "kelas.php"
+[Method: GET, Route: class]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(51): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->kelas()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')

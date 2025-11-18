@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 
         .icon-box {
@@ -22,6 +23,18 @@
             transform: translateY(-3px);
         }
 </style>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var modalEl = document.getElementById('loginSuccessModal');
+        if (modalEl) {
+            var modal = new bootstrap.Modal(modalEl);
+            modal.show();
+        }
+    });
+</script>
+
 <footer class="mt-5 pt-5 pb-4" style="background:#0c1b0f; color:white; border-top:1px solid rgba(0,255,0,0.15)">
     <div class="container">
 
@@ -31,10 +44,10 @@
             <div class="col-md-4">
                 <div class="d-flex align-items-center justify-content-center justify-content-md-start mb-2">
                     <img src="<?= base_url('logo.png') ?>" width="55" class="me-3">
-                    <h5 class="fw-bold mb-0" style="font-family:'Courier New', monospace;">SIMAJA</h5>
+                    <h5 class="fw-bold mb-0" style="font-family:'Courier New', monospace;">EduJam</h5>
                 </div>
                 <p class="text-white-50 mb-0">
-                    Study Jam Management System<br>
+                    Study Jam Education<br>
                     Lacak perjalanan belajar Anda bersama kami.
                 </p>
             </div>
@@ -70,7 +83,7 @@
 
             <!-- Address -->
             <div class="col-md-4 text-center text-md-start">
-                <h6 class="fw-bold mb-3" style="font-family:'Courier New', monospace;">Address</h6>
+                <h6 class="fw-bold mb-3" style="font-family:'Courier New', monospace;">Alamat</h6>
                 <p class="text-white-50 mb-0">
                     Jl. Dr. Soetomo No.1, Karangcengis, Sidakaya,<br>
                     Kec. Cilacap Sel., Kabupaten Cilacap,<br>
@@ -83,7 +96,7 @@
         <hr class="border-success mt-4" style="opacity:0.25">
 
         <p class="text-center text-white-50 small mb-0">
-            © <?= date('Y') ?> SIMAJA — Semua hak dilindungi undang-undang.
+            © <?= date('Y') ?> EDUJAM — Semua hak dilindungi undang-undang.
         </p>
     </div>
 </footer>

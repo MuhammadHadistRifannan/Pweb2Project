@@ -42,7 +42,7 @@
 </div>
 
 <script>
-     function requestCameraAccess(Boolean isScan = true) {
+    async function requestCameraAccess() {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 

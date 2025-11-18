@@ -12,7 +12,7 @@ class Rewards extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_reward' , 'point' , 'category' , 'sudah_reedem'];
+    protected $allowedFields    = ['nama_reward' , 'point' , 'category' ,'deskripsi' ,  'sudah_reedem' , 'stok'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

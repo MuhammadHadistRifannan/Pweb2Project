@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard - SIMAJA</title>
+    <title>User Dashboard - EDUJAM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -13,6 +13,7 @@
             font-family: "Inter", sans-serif;
             color: white;
         }
+
 
         .card-stat {
             background: #ffffff;
@@ -118,7 +119,6 @@
         }
 
         .tag-point {
-            position: absolute;
             top: 15px;
             right: 15px;
             background: #ff8b1f;
@@ -127,6 +127,7 @@
             border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
+            display: inline-block;
         }
 
         .icon-box {
@@ -308,6 +309,40 @@
             font-family: monospace;
             font-size: 0.95rem;
         }
+
+        /* Efek fade-in untuk seluruh halaman */
+        /* Efek fade-in seluruh halaman */
+        body {
+            opacity: 0;
+            animation: fadeIn 0.9s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-item , .card-stat , .reward-card , .scanner-card {
+            opacity: 0;
+            animation: fadeSlideUp 0.6s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -315,7 +350,7 @@
     <nav class="navbar navbar-expand-lg px-4 banner">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="<?= base_url('logo.png') ?>" width="50" class="me-2">
-            <span class="fw-bold text-white" style="font-family: 'Courier New', monospace;">SIMAJA</span>
+            <span class="fw-bold text-white" style="font-family: 'Courier New', monospace;">EDUJAM</span>
         </a>
 
 
@@ -360,7 +395,7 @@
 
                 <li class="nav-item ms-3">
                     <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold">
-                        <?= 150 ?> Pts
+                        <?= $user->point ?> Pts
                     </span>
                 </li>
     </nav>

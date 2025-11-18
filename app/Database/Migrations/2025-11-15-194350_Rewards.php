@@ -28,10 +28,14 @@ class Rewards extends Migration
             ],
             'sudah_reedem' => [
                 'type' => 'bool'
+            ],
+            'stok' => [
+                'type' => 'INT'
             ]
             ]);
 
             $this->forge->addKey('id' , true);
+            $this->forge->addForeignKey('id_user' , 'users' , 'id' , 'CASCADE' , 'CASCADE');
             $this->forge->createTable('rewards');
     }
 

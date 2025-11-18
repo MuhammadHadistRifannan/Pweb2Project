@@ -1,0 +1,198 @@
+CRITICAL - 2025-11-15 07:35:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "_footer.php"
+[Method: GET, Route: login]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/View/View.php(475): CodeIgniter\View\View->render()
+ 3 VENDORPATH/myth/auth/src/Views/login.php(86): CodeIgniter\View\View->include()
+ 4 SYSTEMPATH/View/View.php(226): include('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/myth/auth/src/Views/login.php')
+ 5 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 7 VENDORPATH/myth/auth/src/Controllers/AuthController.php(413): view()
+ 8 VENDORPATH/myth/auth/src/Controllers/AuthController.php(58): Myth\Auth\Controllers\AuthController->_render()
+ 9 SYSTEMPATH/CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->login()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+15 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 07:36:04 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "_footer.php"
+[Method: GET, Route: login]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 VENDORPATH/myth/auth/src/Views/login.php(86): view()
+ 4 SYSTEMPATH/View/View.php(226): include('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/myth/auth/src/Views/login.php')
+ 5 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 7 VENDORPATH/myth/auth/src/Controllers/AuthController.php(413): view()
+ 8 VENDORPATH/myth/auth/src/Controllers/AuthController.php(58): Myth\Auth\Controllers\AuthController->_render()
+ 9 SYSTEMPATH/CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->login()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+15 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 07:36:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "_footer.php"
+[Method: GET, Route: login]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 VENDORPATH/myth/auth/src/Views/login.php(86): view()
+ 4 SYSTEMPATH/View/View.php(226): include('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/myth/auth/src/Views/login.php')
+ 5 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 7 VENDORPATH/myth/auth/src/Controllers/AuthController.php(413): view()
+ 8 VENDORPATH/myth/auth/src/Controllers/AuthController.php(58): Myth\Auth\Controllers\AuthController->_render()
+ 9 SYSTEMPATH/CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->login()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+15 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 07:36:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "_footer.php"
+[Method: GET, Route: login]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 VENDORPATH/myth/auth/src/Views/login.php(86): view()
+ 4 SYSTEMPATH/View/View.php(226): include('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/myth/auth/src/Views/login.php')
+ 5 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 7 VENDORPATH/myth/auth/src/Controllers/AuthController.php(413): view()
+ 8 VENDORPATH/myth/auth/src/Controllers/AuthController.php(58): Myth\Auth\Controllers\AuthController->_render()
+ 9 SYSTEMPATH/CodeIgniter.php(933): Myth\Auth\Controllers\AuthController->login()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+12 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+15 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 08:18:15 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "kelas.php"
+[Method: GET, Route: class]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(30): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->kelas()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 08:25:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "kelas.php"
+[Method: GET, Route: class]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(30): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->kelas()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 14:46:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "absen.php"
+[Method: GET, Route: absen]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(26): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->absen()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 14:46:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "absen.php"
+[Method: GET, Route: absen]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(26): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->absen()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 14:46:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "abseni.php"
+[Method: GET, Route: absen]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(26): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->absen()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 14:46:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "abseni.php"
+[Method: GET, Route: absen]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(26): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->absen()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+CRITICAL - 2025-11-15 14:55:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "kelas.php"
+[Method: GET, Route: class]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 39.
+ 1 SYSTEMPATH/View/View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Home.php(34): view()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->kelas()
+ 5 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 7 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 9 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+10 SYSTEMPATH/rewrite.php(44): require_once('/home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/public/index.php')
+ERROR - 2025-11-15 19:23:12 --> mysqli_sql_exception: Referencing column 'id_user' and referenced column 'id' in foreign key constraint 'absen_id_user_foreign' are incompatible. in /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/Forge.php(570): CodeIgniter\Database\BaseConnection->query()
+#4 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/app/Database/Migrations/2025-11-15-190934_Absen.php(33): CodeIgniter\Database\Forge->createTable()
+#5 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(876): App\Database\Migrations\Absen->up()
+#6 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest()
+#8 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run()
+#9 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#10 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand()
+#12 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/spark(87): CodeIgniter\Boot::bootSpark()
+#13 {main}
+ERROR - 2025-11-15 19:41:58 --> mysqli_sql_exception: Unknown table 'simaja.rewards' in /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:327
+Stack trace:
+#0 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(327): mysqli->query()
+#1 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute()
+#2 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery()
+#3 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/Forge.php(663): CodeIgniter\Database\BaseConnection->query()
+#4 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/app/Database/Migrations/2025-11-15-192711_Rewards.php(44): CodeIgniter\Database\Forge->dropTable()
+#5 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(876): App\Database\Migrations\Rewards->down()
+#6 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(289): CodeIgniter\Database\MigrationRunner->migrate()
+#7 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Commands/Database/MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress()
+#8 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run()
+#9 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/CLI/BaseCommand.php(119): CodeIgniter\CLI\Commands->run()
+#10 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Commands/Database/MigrateRefresh.php(86): CodeIgniter\CLI\BaseCommand->call()
+#11 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run()
+#12 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+#13 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand()
+#15 /home/bennedistus/Documents/KULIAH/PEMROGRAMAN_WEB_2/webkuliah/spark(87): CodeIgniter\Boot::bootSpark()
+#16 {main}
