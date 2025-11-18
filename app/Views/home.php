@@ -33,14 +33,8 @@
             width: 100%;
             height: 100%;
 
-            /* Background image */
-            background: url('<?= base_url("hero.jpeg") ?>');
-            background-size: cover;
-            background-position: bottom;
-            background-repeat: repeat;
-
-            border-bottom: 0.1cap solid #72ff65ff;
-            box-shadow: 0 10px 30px rgba(123, 255, 106, 0.25);
+            border-bottom: 0.1cap solid #14e069ff;
+            box-shadow: 0 10px 30px rgba(16, 113, 3, 0.25);
             ;
 
             /* Optional overlay biar teks tetap jelas */
@@ -50,6 +44,7 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeUp 0.8s ease-out forwards;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -67,6 +62,23 @@
             border-radius: 0;
 
             z-index: -1;
+        }
+
+        #heroCarousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .hero-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+            /* gelapkan sedikit agar teks jelas */
         }
 
 
@@ -118,7 +130,7 @@
             animation: fadeUp 0.8s ease-out forwards;
         }
 
-        .feature-card:hover{
+        .feature-card:hover {
             box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
             border-bottom: 1px solid #15ff00ff;
             cursor: pointer;
@@ -169,6 +181,68 @@
                 transform: translateY(0);
             }
         }
+
+        /* HERO AREA POSISI & OVERLAY */
+        .hero {
+            position: relative;
+            width: 100%;
+            padding: 80px 20px 60px;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Overlay gelap di atas carousel */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+        }
+
+        /* Posisi konten hero supaya muncul di atas background */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* === CAROUSEL BACKGROUND === */
+        .hero-carousel .carousel-item img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center;
+            /* terbaik */
+            transform: scale(1.05);
+            transition: transform 1.5s ease-in-out;
+        }
+
+
+        /* Smooth horizontal sliding */
+        .carousel-item {
+            transition: transform 1.1s ease-in-out !important;
+        }
+
+        /* Parallax zoom effect */
+        .carousel-item img {
+            transform: scale(1.05);
+            transition: transform 1.5s ease-in-out;
+        }
+
+        .carousel-item.active img {
+            transform: scale(1);
+        }
+
+        /* Tombol carousel warna putih */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+
+        .carousel-indicators button {
+            background-color: white;
+        }
     </style>
 </head>
 
@@ -176,69 +250,107 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <img src="<?= base_url('logo.png') ?>" alt="logoprotic" class="hero-logo">
 
-        <h1>Welcome to <span>EDUJAM</span></h1>
-        <p class="mt-3 mb-4" style="max-width: 600px; margin: 0 auto;">
-            Education Study Jam – Lacak perjalanan belajar Anda, dapatkan hadiah,
-            dan tingkatkan keterampilan Anda
-        </p>
+        <!-- CAROUSEL BACKGROUND -->
+        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="3000">
 
-        <div class="d-flex justify-content-center gap-3 mt-4">
-            <a href="<?= base_url('register') ?>" class="btn btn-EDUJAM btn-green">Get Started</a>
-            <a href="<?= base_url('dashboard') ?>" class="btn btn-EDUJAM btn-dark-outline">Sign In</a>
+            <!-- INDICATORS -->
+    
+
+            <!-- SLIDES -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="<?= base_url('hero.jpeg') ?>" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="<?= base_url('hero-1.jpeg') ?>" class="d-block w-100">
+                </div>
+            </div>
+
+  
+
         </div>
+
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+            <img src="<?= base_url('logo.png') ?>" alt="logoprotic" class="hero-logo">
+            <h1>Welcome to <span>EDUJAM</span></h1>
+            <p class="mt-3 mb-4" style="max-width: 600px; margin: 0 auto;">
+                Education Study Jam – Lacak perjalanan belajar Anda, dapatkan hadiah,
+                dan tingkatkan keterampilan Anda
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <a href="<?= base_url('register') ?>" class="btn btn-EDUJAM btn-green">Get Started</a>
+                <a href="<?= base_url('dashboard') ?>" class="btn btn-EDUJAM btn-dark-outline">Sign In</a>
+            </div>
+            <!-- FEATURES SECTION -->
+            <h2 class="section-title">Jelajahi berbagai fitur study jam</h2>
+        
+            <div class="container pb-5">
+                <div class="row g-4">
+        
+                    <div class="col-md-3">
+                        <div class="feature-card">
+                            <div class="bi bi-book"></div>
+                            <h4>Kelas</h4>
+                            <p class="text-white-50">
+        
+                                Jelajahi dan daftar di berbagai kelas teknologi mulai dari Pengembangan Seluler hingga Desain
+                                Web </p>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3">
+                        <div class="feature-card">
+                            <div class="bi bi-qr-code-scan"></div>
+                            <h4>Qr Absen</h4>
+                            <p class="text-white-50">
+                                Check-in dengan mudah menggunakan pemindaian QR – cepat dan lancar
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3">
+                        <div class="feature-card">
+                            <div class="bi bi-gift"></div>
+                            <h4>Hadiah</h4>
+                            <p class="text-white-50">
+                                Kumpulkan poin kehadiran dan tukarkan dengan hadiah </p>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-3">
+                        <div class="feature-card">
+                            <div class="bi bi-graph-up-arrow"></div>
+                            <h4>Lacak Progress</h4>
+                            <p class="text-white-50">
+                                Pantau perjalanan belajar Anda dan lihat seberapa jauh Anda telah berkembang
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                          <!-- BUTTONS -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+                
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                    </div>
+            </div>
+        </div>
+
     </section>
 
 
-    <!-- FEATURES SECTION -->
-    <h2 class="section-title">Jelajahi berbagai fitur study jam</h2>
 
-    <div class="container pb-5">
-        <div class="row g-4">
-
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="bi bi-book"></div>
-                    <h4>Kelas</h4>
-                    <p class="text-white-50">
-
-                        Jelajahi dan daftar di berbagai kelas teknologi mulai dari Pengembangan Seluler hingga Desain
-                        Web </p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="bi bi-qr-code-scan"></div>
-                    <h4>Qr Absen</h4>
-                    <p class="text-white-50">
-                        Check-in dengan mudah menggunakan pemindaian QR – cepat dan lancar
-                    </p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="bi bi-gift"></div>
-                    <h4>Hadiah</h4>
-                    <p class="text-white-50">
-                        Kumpulkan poin kehadiran dan tukarkan dengan hadiah </p>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="feature-card">
-                    <div class="bi bi-graph-up-arrow"></div>
-                    <h4>Lacak Progress</h4>
-                    <p class="text-white-50">
-                        Pantau perjalanan belajar Anda dan lihat seberapa jauh Anda telah berkembang
-                    </p>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <!-- CALL TO ACTION SECTION -->
     <div class="container">

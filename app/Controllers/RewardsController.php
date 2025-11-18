@@ -13,6 +13,14 @@ class RewardsController extends BaseController
     }
 
     public function ExchangeRewards(){
+        $data = $this->request->getPost();
+        $rewardpoint = (int)$data['point-reward'];
+        $userpoint = (int)$data['point-user'];
         
+        if ($userpoint < $rewardpoint){
+            return redirect()->to('/rewards')->with('error' , "Point tidak cukup, kumpulkan lebih banyak poin");
+        }
+
+         
     }
 }

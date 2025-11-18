@@ -35,18 +35,26 @@
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.12);
-            /* putih transparan */
-            border-radius: 20px;
-            border: 1px solid #003403;
-            /* border kaca */
-            backdrop-filter: blur(12px);
-            /* efek blur kaca */
-            -webkit-backdrop-filter: blur(12px);
-            /* untuk Safari */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-            /* shadow lembut */
-            padding: 20px;
+            max-width: 480px;
+            width: 100%;
+            padding: 50px 55px;
+
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            /* Softer shadows */
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.25),
+                0 6px 20px rgba(0, 0, 0, 0.15),
+                inset 0 0 0 rgba(255, 255, 255, 0.5);
+
+            animation: fadeUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
         }
 
 
@@ -339,7 +347,10 @@
             }
         }
 
-        .fade-item , .card-stat , .reward-card , .scanner-card {
+        .fade-item,
+        .card-stat,
+        .reward-card,
+        .scanner-card {
             opacity: 0;
             animation: fadeSlideUp 0.6s ease-out forwards;
         }

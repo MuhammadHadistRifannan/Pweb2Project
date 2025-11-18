@@ -16,6 +16,10 @@ $routes->group('' , $reqlogin , function($routes) {
     $routes->get('scan', 'Home::scan');
     $routes->get('absen' , 'Home::absen');
     $routes->get('profile', 'Home::profile');
-        
+
+
+    // ========== REWARDS 
+    $routes->post('rewards/reedem/(:any)' , 'RewardsController::ExchangeRewards');
+    
 });
 

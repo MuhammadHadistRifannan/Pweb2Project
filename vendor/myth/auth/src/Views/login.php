@@ -2,40 +2,119 @@
 <?= $this->section('main') ?>
 <style>
     body {
-        background: linear-gradient(#0f141c, #234d22);
-        margin: 0;
+                background: radial-gradient(circle at top, #003403, #0D0D0D);
+
         font-family: "Inter", sans-serif;
+        color: white;
     }
 
+    /* CLEAN MODERN GLASS */
     .EDUJAM-card {
         max-width: 480px;
         width: 100%;
-        border-radius: 26px;
-        background: #ffffff;
-        padding: 40px 45px;
+        padding: 50px 55px;
+
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        /* Softer shadows */
+        box-shadow:
+            0 15px 40px rgba(0, 0, 0, 0.25),
+            0 6px 20px rgba(0, 0, 0, 0.15),
+            inset 0 0 0 rgba(255, 255, 255, 0.5);
+
+        animation: fadeUp 0.8s ease-out forwards;
         opacity: 0;
         transform: translateY(20px);
-        animation: fadeUp 0.8s ease-out forwards;
     }
 
+    h3 {
+        font-weight: 700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    /* FLOATING LABEL WRAPPER */
+    .input-wrapper {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    /* Floating Label */
+    .input-wrapper label {
+        position: absolute;
+        top: 50%;
+        left: 18px;
+        transform: translateY(-50%);
+        font-size: 14px;
+        padding: 0 6px;
+
+        background: rgba(15, 20, 24, 0.6);
+        backdrop-filter: blur(8px);
+
+        color: rgba(255, 255, 255, 0.75);
+        pointer-events: none;
+        transition: 0.2s ease;
+    }
+
+    /* Modern Input Glass */
     .EDUJAM-input {
-        border-radius: 12px;
-        height: 45px;
+        width: 100%;
+        height: 48px;
+        padding: 12px 18px;
+        border-radius: 14px;
+
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.07);
+
+        backdrop-filter: blur(14px);
+
+        color: white;
+
+        transition: 0.2s;
     }
 
+    /* Floating animation */
+    .EDUJAM-input:focus + label,
+    .EDUJAM-input:not(:placeholder-shown) + label {
+        top: -6px;
+        font-size: 12px;
+        opacity: 0.85;
+    }
+
+    .EDUJAM-input::placeholder {
+        color: transparent;
+    }
+
+    /* Focus state */
+    .EDUJAM-input:focus {
+        border: 1px solid #4eff7a;
+        box-shadow: 0 0 10px rgba(78, 255, 122, 0.35);
+    }
+
+    /* GLASS BUTTON */
     .EDUJAM-btn {
-        background-color: #1f5f2a;
-        border-radius: 14px;
-        height: 45px;
+        height: 48px;
+        border-radius: 16px;
+        border: 1px solid rgba(115, 255, 140, 0.45);
+
+        background: linear-gradient(135deg,
+                rgba(69, 200, 93, 0.35),
+                rgba(69, 200, 93, 0.18));
+
+        backdrop-filter: blur(10px);
+        color: white;
+        font-weight: 600;
+
+        box-shadow:
+            0 6px 20px rgba(0, 255, 85, 0.22);
     }
 
     .EDUJAM-btn:hover {
-        opacity: .92;
-    }
-
-    .EDUJAM-small {
-        font-family: "Courier New", monospace;
-        color: #333;
+        background: rgba(69, 200, 93, 0.5);
     }
 
     @keyframes fadeUp {
@@ -45,6 +124,7 @@
         }
     }
 </style>
+
 
 <div class="d-flex align-items-center justify-content-center vh-100">
 

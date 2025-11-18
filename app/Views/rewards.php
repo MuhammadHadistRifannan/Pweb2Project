@@ -19,11 +19,15 @@
                         <div class="tag-point">Stok: <?= $reward['stok'] ?></div>
                     </div>
 
-                    <h5 class="btn btn-warning disabled"><?= $reward['category'] ?></h5>
+                    <h5 class="btn btn-outline-warning disabled"><?= $reward['category'] ?></h5>
 
                     <h5 class="fw-bold"><?= $reward['nama_reward']; ?></h5>
                     <p><?= $reward['deskripsi']; ?></p>
-                    <button class="btn btn-success w-100">Tukar Reward</button>
+                    <form action="rewards/reedem/<?= $reward['nama_reward'] ?>" method="post">
+                        <input type="hidden" name="point-reward" value="<?= $reward['point']?>">
+                        <input type="hidden" name="point-user" value="<?= $user->point ?>">
+                        <input type="submit" value="Tukar Hadiah" class="btn btn-success">
+                    </form>
                 </div>
             </div>
         <?php endforeach; ?>

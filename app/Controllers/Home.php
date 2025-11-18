@@ -51,10 +51,9 @@ class Home extends BaseController
 
     public function scan(){
         $data = [
-            'user' => user(),
-            'rewards' => $this->Rewards->findAll()
-        ];
-        return view('scan');
+            'user' => user()
+        ]; 
+        return view('scan' , $data);
     }
 
     public function kelas(){
