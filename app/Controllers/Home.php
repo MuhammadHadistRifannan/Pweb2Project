@@ -55,9 +55,12 @@ class Home extends BaseController
         ]; 
         return view('scan' , $data);
     }
-
+    
     public function kelas(){
-        $data['kelas'] = $this->Kelas->findAll();
+        $data = [
+            'user' => user() , 
+            'kelas' => $this->Kelas->findAll()
+        ]; 
         return view('kelas' , $data);
     }
 }

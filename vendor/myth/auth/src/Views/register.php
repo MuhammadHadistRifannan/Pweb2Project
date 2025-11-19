@@ -146,11 +146,11 @@
 
       <div class="mb-3">
         <label class="fw-bold" for="login">Email</label>
-        <input type="email" name="login" class="form-control EDUJAM-input" placeholder="Masukkan email...">
+        <input type="email" name="email" class="form-control EDUJAM-input" placeholder="Masukkan email...">
       </div>
       <div class="mb-3">
         <label class="fw-bold" for="login">Username</label>
-        <input type="text" name="login" class="form-control EDUJAM-input" placeholder="Masukkan email...">
+        <input type="text" name="username" class="form-control EDUJAM-input" placeholder="Masukkan username...">
       </div>
       <div class="mb-4">
         <label class="fw-bold" for="password">Password</label>
@@ -161,7 +161,7 @@
 
       <div class="mb-4">
         <label class="fw-bold" for="password">Konfirmasi Password</label>
-        <input type="password" name="password" class="form-control EDUJAM-input" placeholder="Masukkan password...">
+        <input type="password" name="pass_confirm" class="form-control EDUJAM-input" placeholder="Masukkan password...">
       </div>
 
       <button type="submit" class="btn w-100 fw-bold text-white EDUJAM-btn">

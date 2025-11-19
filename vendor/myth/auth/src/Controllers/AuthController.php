@@ -413,4 +413,12 @@ class AuthController extends Controller
     {
         return view($view, $data);
     }
+
+
+    public function loginMentor(){
+        if ($this->auth->check()){
+            return redirect()->to('/mentor');
+        }
+        return $this->_render($this->config->views['mentorlogin']);
+    }
 }

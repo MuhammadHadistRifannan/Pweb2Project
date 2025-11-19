@@ -14,8 +14,11 @@ $routes->group('', ['namespace' => 'Myth\Auth\Controllers'], static function ($r
     $reservedRoutes = $config->reservedRoutes;
 
     // Login/out
+    // Login/out
     $routes->get($reservedRoutes['login'], 'AuthController::login', ['as' => $reservedRoutes['login']]);
+    $routes->get($reservedRoutes['loginmentor'], 'AuthController::loginMentor');
     $routes->post($reservedRoutes['login'], 'AuthController::attemptLogin');
+    $routes->post($reservedRoutes['loginmentor'], 'AuthController::attemptLoginMentor');
     $routes->get($reservedRoutes['logout'], 'AuthController::logout');
 
     // Registration

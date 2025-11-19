@@ -1,5 +1,6 @@
 <?= $this->include('templates/header') ?>
 <?= $this->section('main') ?>
+<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 <div class="attendance-wrapper">
 
     <!-- Title Section -->
@@ -14,15 +15,12 @@
         <h2>QR Code Scanner</h2>
         <p class="subtext">Position the QR code within the frame to scan automatically</p>
 
-        <!-- Scanner Frame -->
-        <div class="scanner-frame">
-            <video id="cameraView" style="width: 100%; border-radius: 10px;">
-                Click the button below to start scanning
-            </video>
-        </div>
+        <div id="reader" style="width:100%;"></div>
+
+        <div id="scanAlert" class="mt-3"></div>
 
         <!-- Button -->
-        <button class="scan-btn" onclick="requestCameraAccess()">Start Scanning</button>
+        <button class="scan-btn" onclick="getCameraAccess()">Start Scanning</button>
 
         <!-- Tips -->
         <div class="tips-box">
@@ -42,33 +40,46 @@
 </div>
 
 <script>
-    async function requestCameraAccess() {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+    const html5QrCode = new Html5Qrcode("reader");
+    function onScanSuccess(decodedText) {
 
-            // Jika berhasil → tampilkan pada elemen video
-            const video = document.getElementById("cameraView");
-            video.srcObject = stream;
-            video.play();
-
-            console.log("Camera access granted");
-
-            document.querySelector(".scan-btn").addEventListener("click", async () => {
-                const btn = document.querySelector(".scan-btn");
-
-                btn.innerText = "Scanning...";
-                btn.disabled = true;
-
-                startScanner();
+        const qrObj =JSON.parse(decodedText);
+        fetch("/absen/check", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ qr: qrObj })
+        })
+        .then(res => res.json())
+        .then(data => {
+                if (data.status === false){
+                    showHtmlAlert(data.message , "danger")
+                    console.log(decodedText)
+                }else {
+                    showHtmlAlert("Anda telah berhasill absen")
+                    html5QrCode.stop()
+                    window.location.href = "/dashboard"
+                }
             });
-            
-            return true;
+    }
 
-        } catch (error) {
-            console.error("Camera access denied:", error);
-            alert("Camera access is required for QR scanning.");
-            return false;
-        }
+    function getCameraAccess() {
+
+        Html5Qrcode.getCameras().then(devices => {
+            html5QrCode.start(
+                devices[0].id,
+                { fps: 10, qrbox: 500 },
+                onScanSuccess
+            );
+        });
+    }
+
+    function showHtmlAlert(message, type = "success") {
+        document.getElementById("scanAlert").innerHTML = `
+        <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    `;
     }
 
 </script>

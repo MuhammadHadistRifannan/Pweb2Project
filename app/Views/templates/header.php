@@ -354,14 +354,51 @@
             opacity: 0;
             animation: fadeSlideUp 0.6s ease-out forwards;
         }
+
+        .class-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .class-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .icon i {
+            font-size: 1.5rem;
+        }
+
+        .modal-content {
+            background: #0f1b14 !important;
+            /* warna dark green seperti background */
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .modal-header,
+        .modal-body,
+        .modal-footer {
+            border-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        .btn-close {
+            filter: invert(1);
+            /* biar ikon X jadi putih */
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg px-4 banner">
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center gap-4" href="#">
             <img src="<?= base_url('logo.png') ?>" width="50" class="me-2">
             <span class="fw-bold text-white" style="font-family: 'Courier New', monospace;">EDUJAM</span>
+            <span
+                class="badge <?= $user->title != 'sepuh' ? 'bg-success text-white' : 'bg-warning text-dark' ?> px-3 py-2 rounded-pill fw-bold">
+                <?= $user->title == 'sepuh' ? $user->title : 'peserta' ?>
+            </span>
         </a>
 
 
@@ -391,7 +428,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link nav-link-custom" href="/class">
+                        <a class="nav-link nav-link-custom" href="/kelas">
                             <i class="bi bi-book"></i> Kelas
                         </a>
                     </li>
@@ -401,14 +438,14 @@
                             <i class="bi bi-box-arrow-right"></i> Keluar
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <span class="badge bg-warning text-dark px-3 m-2 py-2 rounded-pill fw-bold">
+                            <?= $user->point ?> Pts
+                        </span>
+                    </li>
                 </ul>
 
 
-                <li class="nav-item ms-3">
-                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold">
-                        <?= $user->point ?> Pts
-                    </span>
-                </li>
     </nav>
 
 

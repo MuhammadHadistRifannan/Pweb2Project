@@ -16,7 +16,7 @@ class Auth extends BaseConfig
      *
      * @var string
      */
-    public $defaultUserGroup;
+    public $defaultUserGroup = 'mahasiswa';
 
     /**
      * --------------------------------------------------------------------
@@ -47,6 +47,7 @@ class Auth extends BaseConfig
      */
     public $reservedRoutes = [
         'login'                   => 'login',
+        'loginmentor'                   => 'loginmentor',
         'logout'                  => 'logout',
         'register'                => 'register',
         'activate-account'        => 'activate-account',
@@ -75,6 +76,7 @@ class Auth extends BaseConfig
      */
     public $views = [
         'login'           => 'Myth\Auth\Views\login',
+        'mentorlogin'           => 'Myth\Auth\Views\mentorlogin',
         'register'        => 'Myth\Auth\Views\register',
         'forgot'          => 'Myth\Auth\Views\forgot',
         'reset'           => 'Myth\Auth\Views\reset',
