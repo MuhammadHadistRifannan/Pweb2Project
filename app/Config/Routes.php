@@ -16,6 +16,8 @@ $routes->group('' , $reqlogin , function($routes) {
     $routes->get('scan', 'Home::scan');
     $routes->get('absen' , 'Home::absen');
     $routes->get('profile', 'Home::profile');
+    $routes->post('/absen/check', 'AbsenController::CheckAbsen');
+
 
 
     // ========== REWARDS 

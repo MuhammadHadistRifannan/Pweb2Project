@@ -1,5 +1,6 @@
 <?= $this->include('templates/header') ?>
 <?= $this->section('main') ?>
+
 <div class="attendance-wrapper">
 
     <!-- Title Section -->
@@ -22,13 +23,11 @@
         </div>
 
         <!-- Button -->
-        <button class="scan-btn" onclick="requestCameraAccess()">Start Scanning</button>
+        <button id="scanBtn" class="scan-btn" onclick="requestCameraAccess()">Start Scanning</button>
 
         <!-- Tips -->
         <div class="tips-box">
-            <div class="bi bi-lightbulb w-20 h-20">
-                Tips
-            </div>
+            <div class="bi bi-lightbulb w-20 h-20">Tips</div>
             <h3>Scanning:</h3>
             <ul>
                 <li>Usahakan pencahayaan terbaik</li>
@@ -41,34 +40,75 @@
 
 </div>
 
+<!-- QR SCANNER JS (html5-qrcode CDN) -->
+<script src="https://unpkg.com/html5-qrcode"></script>
+
 <script>
+    let scannerStarted = false;
+
     async function requestCameraAccess() {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
-            // Jika berhasil → tampilkan pada elemen video
             const video = document.getElementById("cameraView");
             video.srcObject = stream;
             video.play();
 
             console.log("Camera access granted");
 
-            document.querySelector(".scan-btn").addEventListener("click", async () => {
-                const btn = document.querySelector(".scan-btn");
+            const btn = document.getElementById("scanBtn");
+            btn.innerText = "Scanning...";
+            btn.disabled = true;
 
-                btn.innerText = "Scanning...";
-                btn.disabled = true;
-
-                startScanner();
-            });
-            
-            return true;
+            startScanner();
 
         } catch (error) {
             console.error("Camera access denied:", error);
             alert("Camera access is required for QR scanning.");
-            return false;
         }
+    }
+
+    function startScanner() {
+        if (scannerStarted) return;
+        scannerStarted = true;
+
+        const html5QrCode = new Html5Qrcode("cameraView");
+
+        html5QrCode.start(
+            { facingMode: "environment" },
+            { fps: 10, qrbox: 250 },
+            (decodedText) => {
+                console.log("QR Detected: ", decodedText);
+                html5QrCode.stop();
+                sendScanToServer(decodedText);
+            },
+            (errorMessage) => {
+                console.warn("Scan error:", errorMessage);
+            }
+        );
+    }
+
+    function sendScanToServer(qrData) {
+        fetch("<?= base_url('/attendance/scan') ?>", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            body: JSON.stringify({ qr: qrData })
+        })
+        .then(res => res.json())
+        .then(response => {
+            if (response.success) {
+                alert("Absensi berhasil! +1 point diberikan.");
+            } else {
+                alert(response.message);
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Terjadi kesalahan saat mengirim data scan.");
+        });
     }
 
 </script>
