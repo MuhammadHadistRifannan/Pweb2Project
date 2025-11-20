@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class RewardsDetail extends Model
 {
-    protected $table            = 'rewardsdetails';
+    protected $table            = 'RewardsDetail';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
