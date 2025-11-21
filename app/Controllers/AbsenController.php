@@ -4,8 +4,10 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Absen;
+use App\Models\Kelas;
 use App\Models\QrCode;
 use CodeIgniter\HTTP\ResponseInterface;
+use Myth\Auth\Models\UserModel;
 use PhpParser\JsonDecoder;
 
 class AbsenController extends BaseController
@@ -14,6 +16,8 @@ class AbsenController extends BaseController
     {
         $this->Absen = new Absen();
         $this->Qr = new QrCode();
+        $this->userModel = new UserModel();
+        $this->Kelas = new Kelas();
     }
     public function CheckAbsen()
     {
@@ -71,6 +75,12 @@ class AbsenController extends BaseController
             'id_user' => user()->id,
             'tanggal_absen' => date('Y-m-d H:i:s'),
             'id_kelas' => $dataqr['kelasId']
+        ]); 
+
+        $kelas = $this->Kelas->find($dataqr['kelasId']);
+
+        $this->userModel->update(user()->id , [
+            'point' => user()->point + $kelas['point']
         ]);
 
         return $this->response->setJSON([

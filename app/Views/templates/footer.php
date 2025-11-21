@@ -89,8 +89,11 @@
                     Kec. Cilacap Sel., Kabupaten Cilacap,<br>
                     Jawa Tengah 53212
                 </p>
+                <div class="text-center text-md-start">
+                </div>
             </div>
-
+            </div>
+            
         </div>
 
         <hr class="border-success mt-4" style="opacity:0.25">
