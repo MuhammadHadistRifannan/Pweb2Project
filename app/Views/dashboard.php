@@ -2,6 +2,7 @@
 <?= $this->section('main') ?>
 
 
+
 <?php if (session()->getFlashdata('message')): ?>
 <div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -9,7 +10,7 @@
       <div class="modal-header border-0">
         <h5 class="modal-title">
             <i class="bi bi-check-circle-fill me-2 text-success"></i>
-            Berhasil Login
+            <?= session()->getFlashdata('message') ?>
         </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -51,7 +52,7 @@
         <div class="col-md-3">
             <div class="card card-stat fade-item glass p-3">
                 <h6 class="text-white">Total Kehadiran</h6>
-                <h3 class="text-success fw-bold"><?= $user->total_hadir ?></h3>
+                <h3 class="text-success fw-bold"><?= $user->sesi_diikuti ?></h3>
                 <small class="text-white">Total seluruh kehadiran</small>
             </div>
         </div>
@@ -94,7 +95,7 @@
             </div>
 
             <div class="col-md-3">
-                <a href="/riwayat" class="quick-btn history d-block">
+                <a href="/analitik" class="quick-btn history d-block">
                     <i class="bi bi-graph-up-arrow fs-3 d-block mb-2"></i> Lihat Riwayat
                 </a>
             </div>

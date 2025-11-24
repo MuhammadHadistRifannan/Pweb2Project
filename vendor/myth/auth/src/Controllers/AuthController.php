@@ -64,6 +64,7 @@ class AuthController extends Controller
      */
     public function attemptLogin()
     {
+        helper('auth');
         $rules = [
             'login'    => 'required',
             'password' => 'required',
@@ -82,12 +83,16 @@ class AuthController extends Controller
 
         // Determine credential type
         $type = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-
+        
         // Try to log them in...
         if (! $this->auth->attempt([$type => $login, 'password' => $password], $remember)) {
             return redirect()->back()->withInput()->with('error', $this->auth->error() ?? lang('Auth.badAttempt'));
         }
-
+        
+        if (!in_groups('mahasiswa')){
+            $this->auth->logout();
+            return redirect()->to('/login')->with('error' , 'Cuman akun peserta yang boleh login');
+        }
         // Is the user being forced to reset their password?
         if ($this->auth->user()->force_pass_reset === true) {
             return redirect()->to(route_to('reset-password') . '?token=' . $this->auth->user()->reset_hash)->withCookies();
@@ -96,6 +101,7 @@ class AuthController extends Controller
 
         $redirectURL = session('redirect_url') ?? base_url('dashboard');
         unset($_SESSION['redirect_url']);
+    
         
 
         return redirect()->to($redirectURL)->withCookies()->with('message', lang('Auth.loginSuccess'));

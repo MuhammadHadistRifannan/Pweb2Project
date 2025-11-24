@@ -39,7 +39,7 @@
                     </p>
 
                     <p class="text-white mb-1"><strong>Mentor:</strong> <?= $k['mentor'] ?></p>
-                    <p class="text-white mb-4"><strong>Jadwal:</strong> <?= date('D, H:i') ?></p>
+                    <p class="text-white mb-4"><strong>Jadwal:</strong> <?= date('D, H:i' , strtotime($k['jadwal']) ) ?></p>
 
                     <form action="/daftarkelas/<?= $k['id'] ?>" method="post">
                         <button type="button" class="btn btn-success w-100 rounded-3 fw-semibold btn-confirm"

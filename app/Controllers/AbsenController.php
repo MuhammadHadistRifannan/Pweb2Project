@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\Absen;
 use App\Models\Kelas;
 use App\Models\QrCode;
+use App\Models\Progress;
 use CodeIgniter\HTTP\ResponseInterface;
 use Myth\Auth\Models\UserModel;
 use PhpParser\JsonDecoder;
@@ -18,6 +19,7 @@ class AbsenController extends BaseController
         $this->Qr = new QrCode();
         $this->userModel = new UserModel();
         $this->Kelas = new Kelas();
+        $this->Progress = new Progress();
     }
     public function CheckAbsen()
     {
@@ -80,7 +82,18 @@ class AbsenController extends BaseController
         $kelas = $this->Kelas->find($dataqr['kelasId']);
 
         $this->userModel->update(user()->id , [
-            'point' => user()->point + $kelas['point']
+            'point' => user()->point + $kelas['point'],
+            'sesi_diikuti' => user()->sesi_diikuti + 1,
+        ]);
+
+
+        $this->Progress->insert([
+            'id_user' => user()->id ,
+            'total_point' => $kelas['point'] ,
+            'hadir' => true,
+            'id_kelas' => $dataqr['kelasId'],
+            'total_kehadiran' => user()->sesi_diikuti + 1 ,
+            'tanggal_gabung' => date('Y-m-d')
         ]);
 
         return $this->response->setJSON([

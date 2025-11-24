@@ -2,7 +2,7 @@
 <?= $this->section('main') ?>
 <style>
     body {
-                background: radial-gradient(circle at top, #003403, #0D0D0D);
+        background: radial-gradient(circle at top, #003403, #0D0D0D);
 
         font-family: "Inter", sans-serif;
         color: white;
@@ -78,8 +78,8 @@
     }
 
     /* Floating animation */
-    .EDUJAM-input:focus + label,
-    .EDUJAM-input:not(:placeholder-shown) + label {
+    .EDUJAM-input:focus+label,
+    .EDUJAM-input:not(:placeholder-shown)+label {
         top: -6px;
         font-size: 12px;
         opacity: 0.85;
@@ -131,11 +131,11 @@
     <div class="card EDUJAM-card shadow-lg">
         <div class="text-center mb-4">
             <img src="<?= base_url('logo.png') ?>" alt="Logo" width="120">
-
+            
             <h3 class="fw-bold mt-3" style="font-bold font-family: 'Courier New', monospace;">
                 Selamat datang di EDUJAM
             </h3>
-
+            
             <p class="EDUJAM-small mb-1">
                 Login untuk masuk ke EDUJAM
             </p>

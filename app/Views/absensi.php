@@ -59,10 +59,10 @@
                     showHtmlAlert(data.message, "danger")
                     console.log(decodedText)
                 } else {
-                    // window.location.href = "/absen"
                     showHtmlAlert("Anda telah berhasill absen")
                     showPopUp("Anda berhasil absen hari ini")
                     html5QrCode.stop()
+                    window.location.href = "/absen"
                 }
             })
             .catch((error) => {

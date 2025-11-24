@@ -12,7 +12,7 @@ class Progress extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_user' , 'total_point' , 'hadir' , 'total_kehadiran' , 'tanggal_gabung'];
+    protected $allowedFields    = ['id_user' , 'total_point' , 'hadir' , 'id_kelas' , 'total_kehadiran' , 'tanggal_gabung'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

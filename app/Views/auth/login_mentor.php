@@ -4,10 +4,13 @@
     body {
         /* Radial circle gradient dari atas */
         background: radial-gradient(circle at top,
-                #004d13ff 0%,        /* hijau terang di pusat */
-                #001207ff 45%,       /* hijau gelap */
-                #0e3b24 100%       /* hijau sangat gelap */
-        );
+                #004d13ff 0%,
+                /* hijau terang di pusat */
+                #001207ff 45%,
+                /* hijau gelap */
+                #0e3b24 100%
+                /* hijau sangat gelap */
+            );
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -35,10 +38,13 @@
         opacity: 0;
         transform: translateY(20px);
 
-        color: white !important; /* semua teks dalam card jadi putih */
+        color: white !important;
+        /* semua teks dalam card jadi putih */
     }
 
-    h3, p, label {
+    h3,
+    p,
+    label {
         color: #ffffff !important;
     }
 
@@ -100,6 +106,29 @@
 
 
 <div class="d-flex align-items-center justify-content-center vh-100">
+
+    <?php if (session()->getFlashdata('error')): ?>
+        <div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title">
+                            <i class="bi x-lg me-2 text-danger"></i>
+                            Tidak dapat Login
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-success px-4" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php endif; ?>
 
     <div class="card EDUJAM-card shadow-lg">
         <div class="text-center mb-4">

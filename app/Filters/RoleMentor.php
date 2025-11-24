@@ -12,7 +12,7 @@ class RoleMentor implements FilterInterface
     {
         helper('auth');
         if (!in_groups('mentor')) {
-            return redirect()->to('/')->with('error', 'Lu bukan mentor.');
+            return redirect()->to('/loginmentor')->with('error', 'Lu bukan mentor.');
         }
     }
 
