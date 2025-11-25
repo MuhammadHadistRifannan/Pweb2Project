@@ -163,10 +163,16 @@
         </form>
 
         <div class="text-center mt-3">
-            <p class="mb-0 EDUJAM-small">
+            <p class="mb-0 mt-2 EDUJAM-small">
                 Belum punya akun ?
                 <a href="<?= url_to('register') ?>" class="fw-semibold text-success">
                     Buat akun
+                </a>
+            </p>
+            <p class="mb-0 mt-2 EDUJAM-small">
+                Lupa Password ?
+                <a href="<?= url_to('forgot') ?>" class="fw-semibold text-success">
+                    Reset Password
                 </a>
             </p>
         </div>

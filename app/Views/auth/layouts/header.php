@@ -185,7 +185,7 @@
                 <li class="nav-item dropdown ms-3">
                     <a class="nav-link nav-admin dropdown-toggle" href="#" id="adminMenu" role="button"
                         data-bs-toggle="dropdown">
-                        <i class="bi bi-person-circle me-1"></i> Mentor
+                        <i class="bi bi-person-circle me-1"></i> Mentor <?= user()->username ?>
                     </a>
 
                     <ul class="dropdown-menu dropdown-menu-end">

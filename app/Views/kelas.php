@@ -42,9 +42,12 @@
                     <p class="text-white mb-4"><strong>Jadwal:</strong> <?= date('D, H:i' , strtotime($k['jadwal']) ) ?></p>
 
                     <form action="/daftarkelas/<?= $k['id'] ?>" method="post">
+                        <input type="hidden" name="id_user" value="<?= user()->id ?>">
+                        <input type="hidden" name="id_kelas" value="<?= $k['id'] ?>">
+                        <input type="hidden" name="tanggal_masuk" value="<?= date('Y-m-d') ?>">
                         <button type="button" class="btn btn-success w-100 rounded-3 fw-semibold btn-confirm"
-                            data-bs-toggle="modal" data-bs-target="#modalDaftar">
-                            Daftar Kelas
+                            data-bs-toggle="modal" data-bs-target="#modalDaftar" <?= isset($id_user) ? "disabled" : "" ?> >
+                            <?= isset($id_user) ? "Sudah daftar" : "Daftar kelas" ?>
                         </button>
                     </form>
 

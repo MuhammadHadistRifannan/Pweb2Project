@@ -31,6 +31,8 @@ $routes->group('' , $reqloginMahasiswa , function($routes) {
     $routes->post('rewards/reedem/(:any)' , 'RewardsController::ExchangeRewards');
     // ========== Absen 
     $routes->post('absen/check' , 'AbsenController::CheckAbsen');
+    // ========= daftar kelas 
+    $routes->get('daftarkelas' , 'KelasController::EnrollKelas');
 
 });
 

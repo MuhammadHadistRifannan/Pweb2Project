@@ -283,6 +283,7 @@
             <div class="d-flex justify-content-center gap-3 mt-4">
                 <a href="<?= base_url('register') ?>" class="btn btn-EDUJAM btn-green">Get Started</a>
                 <a href="<?= base_url('dashboard') ?>" class="btn btn-EDUJAM btn-dark-outline">Sign In</a>
+                <a href="<?= base_url('loginmentor') ?>" class="btn btn-EDUJAM btn-green">Login Mentor</a>
             </div>
             <!-- FEATURES SECTION -->
             <h2 class="section-title">Jelajahi berbagai fitur study jam</h2>

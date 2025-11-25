@@ -138,7 +138,7 @@
                 Selamat datang di EDUJAM Mentor
             </h3>
 
-            <p class="EDUJAM-small mb-1">
+            <p class="EDUJAM-small mb-1 fw-bold">
                 Login untuk masuk sebagai Mentor
             </p>
         </div>
