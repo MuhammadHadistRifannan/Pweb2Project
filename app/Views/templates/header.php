@@ -440,6 +440,12 @@
             background-color: transparent !important;
             /* For older versions and general compatibility */
         }
+
+        .icon-custom {
+            width: 19px;
+            height: 19px;
+            margin-right: 6px;
+        }
     </style>
 
 </head>
@@ -481,7 +487,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom" href="/rewards">
-                            <i class="bi bi-gift"></i> Hadiah
+                            <i class="bi bi-gift-fill"></i> Hadiah
                         </a>
                     </li>
 
@@ -500,6 +506,12 @@
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom" href="/analitik">
                             <i class="bi bi-graph-up-arrow"></i> Analitik
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="/profile">
+                            <img src="<?= base_url('profileicon.png') ?>" alt="Analitik" class="icon-custom">
+                            Akun
                         </a>
                     </li>
                     <li class="nav-item">

@@ -4,7 +4,7 @@
 <div class="container py-5">
 
     <h2 class="fw-bold text-white">Kelas Tersedia</h2>
-    <p class="text-white-50 mb-4">
+    <p class="text-white mb-4">
         Yuk pilih kelas seru buat upgrade skill kamu 🚀
     </p>
 

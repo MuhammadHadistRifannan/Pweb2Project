@@ -41,7 +41,10 @@ class Home extends BaseController
 
     public function profile()
     {
-        return view('profile');
+        $data = [
+            'user' => user()
+        ];
+        return view('profile' , $data);
     }
 
     public function absen()

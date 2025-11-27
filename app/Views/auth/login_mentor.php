@@ -162,7 +162,14 @@
             <button type="submit" class="btn w-100 fw-bold text-white EDUJAM-btn">
                 Login
             </button>
+            <p class="mb-0 mt-2 EDUJAM-small">
+                    Lupa Password ?
+                    <a href="<?= url_to('forgot') ?>" class="fw-semibold text-success">
+                        Reset Password
+                    </a>
+                </p>
         </form>
+
 
     </div>
 

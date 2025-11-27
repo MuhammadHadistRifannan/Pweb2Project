@@ -131,11 +131,11 @@
     <div class="card EDUJAM-card shadow-lg">
         <div class="text-center mb-4">
             <img src="<?= base_url('logo.png') ?>" alt="Logo" width="120">
-            
+
             <h3 class="fw-bold mt-3" style="font-bold font-family: 'Courier New', monospace;">
                 Selamat datang di EDUJAM
             </h3>
-            
+
             <p class="EDUJAM-small mb-1">
                 Login untuk masuk ke EDUJAM
             </p>
@@ -162,7 +162,9 @@
             </button>
         </form>
 
-        <div class="text-center mt-3">
+
+
+        <div class="text-center mt-2">
             <p class="mb-0 mt-2 EDUJAM-small">
                 Belum punya akun ?
                 <a href="<?= url_to('register') ?>" class="fw-semibold text-success">
