@@ -48,8 +48,3 @@ $routes->group('mentor' , $reqloginMentor , function($routes) {
 
     $routes->get('data-kelas/(:any)' , 'QrController::getDataKelas/$1');
 });
-
-
-
-$routes->get('auth/google', 'GoogleAuthController::SignInWithGoogle');
-$routes->get('auth/google-callback', 'GoogleAuthController::googlecallback');
