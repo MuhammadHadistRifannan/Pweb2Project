@@ -42,7 +42,7 @@
                     <p class="text-white mb-4"><strong>Jadwal:</strong> <?= date('D, H:i' , strtotime($k['jadwal']) ) ?></p>
 
                     <form action="/daftarkelas/<?= $k['id'] ?>" method="post">
-                        <input type="hidden" name="id_user" value="<?= user()->id ?>">
+                        <input type="hidden" name="user_id" value="<?= user()->id ?>">
                         <input type="hidden" name="id_kelas" value="<?= $k['id'] ?>">
                         <input type="hidden" name="tanggal_masuk" value="<?= date('Y-m-d') ?>">
                         <button type="button" class="btn btn-success w-100 rounded-3 fw-semibold btn-confirm"

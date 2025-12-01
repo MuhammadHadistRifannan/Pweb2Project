@@ -18,6 +18,7 @@ $routes->get('loginmentor' , 'MentorAuthController::login');
 $routes->post('loginmentor' , 'MentorAuthController::attemptLogin');
 
 //peserta
+// localhost:8080/dashboard 
 $routes->group('' , $reqloginMahasiswa , function($routes) {
     $routes->get('dashboard', 'Home::dashboard');
     $routes->get('rewards', 'Home::rewards');
@@ -32,7 +33,7 @@ $routes->group('' , $reqloginMahasiswa , function($routes) {
     // ========== Absen 
     $routes->post('absen/check' , 'AbsenController::CheckAbsen');
     // ========= daftar kelas 
-    $routes->get('daftarkelas' , 'KelasController::EnrollKelas');
+    $routes->post('daftarkelas/(:any)' , 'KelasController::EnrollKelas/$1');
 
     $routes->post('profile' , 'ProfileController::UpdateProfile');
 
