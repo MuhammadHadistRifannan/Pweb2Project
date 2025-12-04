@@ -1,8 +1,6 @@
 <?= $this->include('templates/header') ?>
 <?= $this->section('main') ?>
 
-
-
 <?php if (session()->getFlashdata('message')): ?>
 <div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -102,6 +100,7 @@
 
         </div>
     </div>
+
 
 </div>
 

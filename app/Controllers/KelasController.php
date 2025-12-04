@@ -9,20 +9,24 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class KelasController extends BaseController
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->Kelas = new Kelas();
         $this->DetailKelas = new DetailKelas();
     }
 
-    public function EnrollKelas($id_kelas){
+    public function EnrollKelas($id_kelas)
+    {
         $data = $this->request->getVar();
-        $newKelas = $this->DetailKelas->insert([
-            'id_kelas' => $id_kelas , 
-            'id_user' => $data['user_id'] , 
+        $newData = [
+            'id_kelas' => $id_kelas,
+            'id_user' => $data['user_id'],
             'tanggal_masuk' => $data['tanggal_masuk']
-        ]);
+        ];
 
-        return view('kelas' , $newKelas);
-    }   
+        $newKelas = $this->DetailKelas->insert($newData);
+
+        return redirect()->to('/kelas')->with('success' , 'Jangan Lupa absen yaaa');
+    }
 
 }

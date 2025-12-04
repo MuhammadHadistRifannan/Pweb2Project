@@ -22,6 +22,8 @@
         <div id="reader" style="width:100%;"></div>
 
         <div id="scanAlert" class="mt-3"></div>
+        <audio id="sfx1" src="/sfx/money-soundfx.mp3"></audio>
+        <audio id="sfx2" src="/sfx/yahallo_1.mp3"></audio>
 
         <!-- Button -->
         <button class="scan-btn" onclick="getCameraAccess()">Start Scanning</button>
@@ -39,12 +41,37 @@
                 <li>Izinkan kamera di device anda</li>
             </ul>
         </div>
+
     </div>
 
 </div>
 
 <script>
     const html5QrCode = new Html5Qrcode("reader");
+
+    let audioUnlocked = false;
+
+    function unlockAudio() {
+        if (audioUnlocked) return;
+
+        const s1 = document.getElementById("sfx1");
+        const s2 = document.getElementById("sfx2");
+
+        // Play → segera pause → ini "unlock"
+        s1.play().then(() => {
+            s1.pause();
+            s1.currentTime = 0;
+        });
+
+        s2.play().then(() => {
+            s2.pause();
+            s2.currentTime = 0;
+        });
+
+        audioUnlocked = true;
+    }
+
+
     function onScanSuccess(decodedText) {
 
         const qrObj = JSON.parse(decodedText);
@@ -61,8 +88,8 @@
                 } else {
                     showHtmlAlert("Anda telah berhasill absen")
                     showPopUp("Anda berhasil absen hari ini")
+                    playSfx()
                     html5QrCode.stop()
-                    window.location.href = "/absen"
                 }
             })
             .catch((error) => {
@@ -71,7 +98,7 @@
     }
 
     function getCameraAccess() {
-
+        unlockAudio()
         Html5Qrcode.getCameras().then(devices => {
             html5QrCode.start(
                 devices[0].id,
@@ -80,6 +107,30 @@
             );
         });
     }
+
+    function playSfx() {
+        const s1 = document.getElementById("sfx1");
+        const s2 = document.getElementById("sfx2");
+
+        s1.currentTime = 0;
+        s2.currentTime = 0;
+
+        let finished = 0;
+
+        function checkDone() {
+            finished++;
+            if (finished === 2) {
+                window.location.href = "/dashboard";
+            }
+        }
+
+        s1.onended = checkDone;
+        s2.onended = checkDone;
+
+        s1.play();
+        s2.play();
+    }
+
 
     function showHtmlAlert(message, type = "success") {
         document.getElementById("scanAlert").innerHTML = `

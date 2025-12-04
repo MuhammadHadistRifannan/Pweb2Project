@@ -13,7 +13,7 @@
 
     <style>
         body {
-            background: linear-gradient(#122814, #0e1b18);
+            background: linear-gradient(#122814, #0e1b18), url('vtuber.png');
             font-family: "Inter", sans-serif;
             color: white;
         }
@@ -446,6 +446,21 @@
             height: 19px;
             margin-right: 6px;
         }
+
+        .anime-helper {
+            position: fixed;
+            bottom: 10px;
+            right: 60px;
+            width: 20%;
+            padding-top: 40px;
+            /* ubah sesuai ukuran yang kamu mau */
+            z-index: 9999;
+            /* tampil paling depan */
+            pointer-events: none;
+            /* biar tidak mengganggu klik menu */
+            opacity: 40%;
+            /* sedikit transparan biar soft */
+        }
     </style>
 
 </head>
@@ -466,8 +481,8 @@
             <img src="<?= base_url('logo.png') ?>" width="50" class="me-2">
             <span class="fw-bold text-white" style="font-family: 'Courier New', monospace;">EDUJAM</span>
             <span
-                class="badge <?= $user->title != 'sepuh' ? 'bg-success text-white' : 'bg-warning text-dark' ?> px-3 py-2 rounded-pill fw-bold">
-                <?= $user->title == 'sepuh' ? $user->title : 'peserta' ?>
+                class="badge <?= user()->title != 'sepuh' ? 'bg-success text-white' : 'bg-warning text-dark' ?> px-3 py-2 rounded-pill fw-bold">
+                <?= user()->title == 'sepuh' ? user()->title : 'peserta' ?>
             </span>
         </a>
 
@@ -521,7 +536,7 @@
                     </li>
                     <li class="nav-item">
                         <span class="badge bg-warning text-dark px-3 m-2 py-2 rounded-pill fw-bold">
-                            <?= $user->point ?> Pts
+                            <?= user()->point ?> Pts
                         </span>
                     </li>
                 </ul>

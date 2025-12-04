@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\DetailKelas;
 use App\Models\Absen;
 use App\Models\Kelas;
 use App\Models\Progress;
@@ -18,6 +19,7 @@ class Home extends BaseController
         $this->Absen = new Absen();
         $this->Progress = new Progress();
         $this->DetailRewards = new RewardsDetail();
+        $this->DetailKelas = new DetailKelas();
     }
     public function index(): string
     {
@@ -66,9 +68,11 @@ class Home extends BaseController
 
     public function kelas()
     {
+        $dataKelas = $this->DetailKelas->where('id_user' , user()->id)->select('id_kelas , id_user')->findAll();
         $data = [
             'user' => user(),
-            'kelas' => $this->Kelas->findAll()
+            'kelas' => $this->Kelas->findAll(),
+            'detail_kelas' => $dataKelas ?? 0
         ];
         return view('kelas', $data);
     }
