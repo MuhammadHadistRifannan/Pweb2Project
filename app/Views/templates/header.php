@@ -7,9 +7,13 @@
     <title>User Dashboard - EDUJAM</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial"></script>
+
+
     <style>
         body {
-            background: linear-gradient(#122814, #0e1b18);
+            background: linear-gradient(#122814, #0e1b18), url('vtuber.png');
             font-family: "Inter", sans-serif;
             color: white;
         }
@@ -387,17 +391,98 @@
             filter: invert(1);
             /* biar ikon X jadi putih */
         }
+
+        .banner {
+            background: #003403;
+        }
+
+        .shape {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            background: #1e482d;
+            clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 18px rgba(50, 200, 80, 0.4);
+        }
+
+        .chart-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .table-dark-green {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .table-dark-green tr {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .table-transparent {
+            --bs-table-bg: transparent !important;
+            /* For Bootstrap v5+ */
+            background-color: transparent !important;
+            /* For older versions and general compatibility */
+        }
+
+        .icon-custom {
+            width: 19px;
+            height: 19px;
+            margin-right: 6px;
+        }
+
+        .anime-helper {
+            position: fixed;
+            bottom: 10px;
+            right: 60px;
+            width: 20%;
+            padding-top: 40px;
+            /* ubah sesuai ukuran yang kamu mau */
+            z-index: 9999;
+            /* tampil paling depan */
+            pointer-events: none;
+            /* biar tidak mengganggu klik menu */
+            opacity: 40%;
+            /* sedikit transparan biar soft */
+        }
     </style>
+
 </head>
 
 <body>
+
+    <?php
+    helper('auth');
+    $auth = service('authentication');
+    if (!in_groups('mahasiswa')) {
+        $auth->logout();
+        return redirect()->to('/home')->with('message', 'Anda Bukan peserta');
+    }
+    ?>
+
     <nav class="navbar navbar-expand-lg px-4 banner">
         <a class="navbar-brand d-flex align-items-center gap-4" href="#">
             <img src="<?= base_url('logo.png') ?>" width="50" class="me-2">
             <span class="fw-bold text-white" style="font-family: 'Courier New', monospace;">EDUJAM</span>
             <span
-                class="badge <?= $user->title != 'sepuh' ? 'bg-success text-white' : 'bg-warning text-dark' ?> px-3 py-2 rounded-pill fw-bold">
-                <?= $user->title == 'sepuh' ? $user->title : 'peserta' ?>
+                class="badge <?= user()->title != 'sepuh' ? 'bg-success text-white' : 'bg-warning text-dark' ?> px-3 py-2 rounded-pill fw-bold">
+                <?= user()->title == 'sepuh' ? user()->title : 'peserta' ?>
             </span>
         </a>
 
@@ -417,7 +502,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link nav-link-custom" href="/rewards">
-                            <i class="bi bi-gift"></i> Hadiah
+                            <i class="bi bi-gift-fill"></i> Hadiah
                         </a>
                     </li>
 
@@ -434,13 +519,24 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="/analitik">
+                            <i class="bi bi-graph-up-arrow"></i> Analitik
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-custom" href="/profile">
+                            <img src="<?= base_url('profileicon.png') ?>" alt="Analitik" class="icon-custom">
+                            Akun
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link nav-link-custom" href="/logout">
                             <i class="bi bi-box-arrow-right"></i> Keluar
                         </a>
                     </li>
                     <li class="nav-item">
                         <span class="badge bg-warning text-dark px-3 m-2 py-2 rounded-pill fw-bold">
-                            <?= $user->point ?> Pts
+                            <?= user()->point ?> Pts
                         </span>
                     </li>
                 </ul>

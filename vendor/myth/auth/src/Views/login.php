@@ -2,7 +2,7 @@
 <?= $this->section('main') ?>
 <style>
     body {
-                background: radial-gradient(circle at top, #003403, #0D0D0D);
+        background: radial-gradient(circle at top, #003403, #0D0D0D);
 
         font-family: "Inter", sans-serif;
         color: white;
@@ -78,8 +78,8 @@
     }
 
     /* Floating animation */
-    .EDUJAM-input:focus + label,
-    .EDUJAM-input:not(:placeholder-shown) + label {
+    .EDUJAM-input:focus+label,
+    .EDUJAM-input:not(:placeholder-shown)+label {
         top: -6px;
         font-size: 12px;
         opacity: 0.85;
@@ -162,11 +162,19 @@
             </button>
         </form>
 
-        <div class="text-center mt-3">
-            <p class="mb-0 EDUJAM-small">
+
+
+        <div class="text-center mt-2">
+            <p class="mb-0 mt-2 EDUJAM-small">
                 Belum punya akun ?
                 <a href="<?= url_to('register') ?>" class="fw-semibold text-success">
                     Buat akun
+                </a>
+            </p>
+            <p class="mb-0 mt-2 EDUJAM-small">
+                Lupa Password ?
+                <a href="<?= url_to('forgot') ?>" class="fw-semibold text-success">
+                    Reset Password
                 </a>
             </p>
         </div>

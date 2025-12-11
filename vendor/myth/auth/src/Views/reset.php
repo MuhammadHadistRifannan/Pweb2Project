@@ -1,62 +1,84 @@
 <?= $this->extend($config->viewLayout) ?>
 <?= $this->section('main') ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 offset-sm-3">
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
 
-            <div class="card">
-                <h2 class="card-header"><?=lang('Auth.resetYourPassword')?></h2>
+            <div class="card border-0 shadow-sm">
+                <div class="card-header text-white text-center" style="background:#0f3d2e;">
+                    <h5 class="mb-0"><?= lang('Auth.resetYourPassword') ?></h5>
+                </div>
+
                 <div class="card-body">
 
                     <?= view('Myth\Auth\Views\_message_block') ?>
 
-                    <p><?=lang('Auth.enterCodeEmailPassword')?></p>
+                    <p class="text-muted mb-4">
+                        <?= lang('Auth.enterCodeEmailPassword') ?>
+                    </p>
 
                     <form action="<?= url_to('reset-password') ?>" method="post">
                         <?= csrf_field() ?>
 
-                        <div class="form-group">
-                            <label for="token"><?=lang('Auth.token')?></label>
-                            <input type="text" class="form-control <?php if (session('errors.token')) : ?>is-invalid<?php endif ?>"
-                                   name="token" placeholder="<?=lang('Auth.token')?>" value="<?= old('token', $token ?? '') ?>">
+                        <!-- Token -->
+                        <div class="mb-3">
+                            <label class="form-label"><?= lang('Auth.token') ?></label>
+                            <input type="text"
+                                   class="form-control <?= session('errors.token') ? 'is-invalid' : '' ?>"
+                                   name="token"
+                                   placeholder="<?= lang('Auth.token') ?>"
+                                   value="<?= old('token', $token ?? '') ?>">
+
                             <div class="invalid-feedback">
                                 <?= session('errors.token') ?>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="email"><?=lang('Auth.email')?></label>
-                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"
-                                   name="email" aria-describedby="emailHelp" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>">
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label class="form-label"><?= lang('Auth.email') ?></label>
+                            <input type="email"
+                                   class="form-control <?= session('errors.email') ? 'is-invalid' : '' ?>"
+                                   name="email"
+                                   placeholder="<?= lang('Auth.email') ?>"
+                                   value="<?= old('email') ?>">
+
                             <div class="invalid-feedback">
                                 <?= session('errors.email') ?>
                             </div>
                         </div>
 
-                        <br>
-
-                        <div class="form-group">
-                            <label for="password"><?=lang('Auth.newPassword')?></label>
-                            <input type="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>"
+                        <!-- Password Baru -->
+                        <div class="mb-3">
+                            <label class="form-label"><?= lang('Auth.newPassword') ?></label>
+                            <input type="password"
+                                   class="form-control <?= session('errors.password') ? 'is-invalid' : '' ?>"
                                    name="password">
+
                             <div class="invalid-feedback">
                                 <?= session('errors.password') ?>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="pass_confirm"><?=lang('Auth.newPasswordRepeat')?></label>
-                            <input type="password" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>"
+                        <!-- Konfirmasi Password -->
+                        <div class="mb-4">
+                            <label class="form-label"><?= lang('Auth.newPasswordRepeat') ?></label>
+                            <input type="password"
+                                   class="form-control <?= session('errors.pass_confirm') ? 'is-invalid' : '' ?>"
                                    name="pass_confirm">
+
                             <div class="invalid-feedback">
                                 <?= session('errors.pass_confirm') ?>
                             </div>
                         </div>
 
-                        <br>
-
-                        <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.resetPassword')?></button>
+                        <!-- Tombol -->
+                        <button type="submit"
+                                class="btn w-100 text-white"
+                                style="background:#0f3d2e;">
+                            <?= lang('Auth.resetPassword') ?>
+                        </button>
                     </form>
 
                 </div>

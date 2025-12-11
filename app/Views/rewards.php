@@ -12,6 +12,8 @@
     if (session()->getFlashdata('success')): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Hadiah Ditukar</strong> <?= session()->getFlashdata('success') ?>
+            <audio id="sfx1" autoplay src="/sfx/money-soundfx.mp3"></audio>
+            <audio id="sfx2" autoplay src="/sfx/yahallo_1.mp3"></audio>
         </div>
     <?php endif; ?>
 
@@ -26,6 +28,7 @@
     <h2 class="fw-bold">Hadiah</h2>
     <p>Redeem poinmu dengan reward yang menarik • Kamu punya <span class="text-warning fw-bold"><?= $user->point ?>
             point</span></p>
+
 
     <!-- Rewards Grid -->
     <div class="row g-4">
@@ -70,7 +73,7 @@
                 </div>
 
                 <div class="modal-body text-center">
-                    Yakin mau tukar reward ini? 🎁
+                    Yakin mau tukar reward ini? 
                 </div>
 
                 <div class="modal-footer">
@@ -99,6 +102,8 @@
             activeForm.submit();
         }
     });
+
+
 </script>
 
 

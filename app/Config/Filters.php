@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Filters\RoleMahasiswa;
 use App\Filters\RoleMentor;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
@@ -39,7 +40,7 @@ class Filters extends BaseFilters
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
         'login' => LoginFilter::class,
-        'role' => RoleMentor::class ,
+        'role_mentor' => RoleMentor::class ,
         'permission' => PermissionFilter::class
     ];
 
